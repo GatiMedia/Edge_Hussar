@@ -1,14 +1,12 @@
 set cut_paste_input [stack 0]
 version 11.2 v3
-push 0
 push $cut_paste_input
 Group {
- inputs 2
- name Edge_Hussar4
+ name Edge_Hussar
  tile_color 0xff5555ff
  selected true
- xpos 2160
- ypos 422
+ xpos 3223
+ ypos 394
  addUserKnob {20 main l Main}
  addUserKnob {26 options l "<b><font color=#DF2111>Color</font><b>"}
  addUserKnob {4 type l "Screen Type" t "Pick color based on the background color." M {Blue Green "" "" ""}}
@@ -16,7 +14,7 @@ Group {
  addUserKnob {41 red l Exposure t "Allows to adjust the exposure of the edge." T Exposure1.red}
  addUserKnob {26 edge_matte l "<b><font color=#FFFFFF>Edges</font><b>"}
  addUserKnob {7 IN_mask l "Inside Mask" t "Adjust the size of the mask`s inside based on the `alpha` input. " R 0 100}
- IN_mask 4
+ IN_mask 8
  addUserKnob {41 size_1 l "Inside Blur" t "Adjust the size of the inside mask`s blur based on the `alpha` input. " T IN_Blur.size}
  addUserKnob {7 OUT_mask l "Outside Mask" t "Adjust the size of the mask`s outside based on the `alpha` input. " R 0 -100}
  OUT_mask -40
@@ -98,19 +96,19 @@ Group {
   xpos 104
   ypos 138
  }
-set N8e245c00 [stack 0]
+set N5cbb8380 [stack 0]
  Dot {
   name Dot2
   xpos 544
   ypos 138
  }
-set N11995880 [stack 0]
+set N69ee0a80 [stack 0]
  Dot {
   name Dot21
   xpos 1754
   ypos 138
  }
-set N1199ea80 [stack 0]
+set N45bbea80 [stack 0]
  Keyer {
   operation "luminance key"
   range {0 0 0 0.1}
@@ -123,14 +121,14 @@ set N1199ea80 [stack 0]
   xpos 1830
   ypos 608
  }
- set C118f5880 [stack 0]
+ set C3301f180 [stack 0]
  Blur {
   size 1.5
   name Blur_Edge_Hussar
   xpos 1830
   ypos 824
  }
- set C1199ce00 [stack 0]
+ set C1caa1180 [stack 0]
  Input {
   inputs 0
   name mask
@@ -162,7 +160,7 @@ set N1199ea80 [stack 0]
   xpos 1314
   ypos 258
  }
-set N1191e380 [stack 0]
+set N69a8c700 [stack 0]
  Dot {
   name Dot366
   xpos 1204
@@ -172,14 +170,14 @@ set N1191e380 [stack 0]
   size {{parent.IN_mask}}
   name IN_FilterErode
   tile_color 0x6aff55ff
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_size 12
   xpos 1170
   ypos 295
  }
  Blur {
   channels alpha
-  size 2
+  size 5
   name IN_Blur
   tile_color 0x6aff55ff
   xpos 1170
@@ -190,7 +188,7 @@ set N1191e380 [stack 0]
   xpos 1204
   ypos 426
  }
-push $N1191e380
+push $N69a8c700
  Dot {
   name Dot368
   xpos 1424
@@ -200,7 +198,7 @@ push $N1191e380
   size {{parent.OUT_mask}}
   name OUT_FilterErode
   tile_color 0xff5594ff
-  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font "Bitstream Vera Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
   note_font_size 12
   xpos 1390
   ypos 295
@@ -239,19 +237,19 @@ push $N1191e380
   ypos 548
   disable true
  }
-set N1134b500 [stack 0]
+set N1caaaa80 [stack 0]
  Dot {
   name Dot18
   xpos 984
   ypos 618
  }
-set Ndf81b500 [stack 0]
+set N64bb2e00 [stack 0]
  Dot {
   name Dot19
   xpos 1094
   ypos 618
  }
-set N118d2000 [stack 0]
+set N64bb2000 [stack 0]
  Dot {
   name Dot20
   xpos 1204
@@ -265,13 +263,13 @@ set N118d2000 [stack 0]
   xpos 1170
   ypos 806
  }
-set N1190f880 [stack 0]
+set N6495a380 [stack 0]
  Dot {
   name Dot11
   xpos 1204
   ypos 1818
  }
-push $N1199ea80
+push $N45bbea80
  Keyer {
   operation "luminance key"
   range {0 0.1 0.5 1}
@@ -279,17 +277,17 @@ push $N1199ea80
   xpos 1720
   ypos 344
  }
-clone $C118f5880 {
+clone $C3301f180 {
   xpos 1720
   ypos 536
   selected false
  }
-clone $C1199ce00 {
+clone $C1caa1180 {
   xpos 1720
   ypos 752
   selected false
  }
-push $N118d2000
+push $N64bb2000
  ChannelMerge {
   inputs 2
   operation multiply
@@ -298,13 +296,13 @@ push $N118d2000
   xpos 1060
   ypos 734
  }
-set N8a9f6a80 [stack 0]
+set N6494e380 [stack 0]
  Dot {
   name Dot13
   xpos 1094
   ypos 1770
  }
-push $N1199ea80
+push $N45bbea80
  Keyer {
   operation "luminance key"
   range {0.5 1 50 50}
@@ -312,17 +310,17 @@ push $N1199ea80
   xpos 1610
   ypos 272
  }
-clone $C118f5880 {
+clone $C3301f180 {
   xpos 1610
   ypos 464
   selected false
  }
-clone $C1199ce00 {
+clone $C1caa1180 {
   xpos 1610
   ypos 680
   selected false
  }
-push $Ndf81b500
+push $N64bb2e00
  ChannelMerge {
   inputs 2
   operation multiply
@@ -331,43 +329,43 @@ push $Ndf81b500
   xpos 950
   ypos 662
  }
-set Ndea33c00 [stack 0]
+set N5cbb7c00 [stack 0]
  Dot {
   name Dot12
   xpos 984
   ypos 1722
  }
-push $N1134b500
+push $N1caaaa80
  Dot {
   name Dot5
   xpos 874
   ypos 570
  }
-set N1131dc00 [stack 0]
+set N2a4ef880 [stack 0]
  Dot {
   name Dot17
   xpos 874
   ypos 1146
  }
-set N11923880 [stack 0]
+set N2a4ee000 [stack 0]
  Dot {
   name Dot9
   xpos 874
   ypos 1362
  }
-set N11320e00 [stack 0]
+set N2a4ef180 [stack 0]
  Dot {
   name Dot7
   xpos 874
   ypos 1482
  }
-set N11911180 [stack 0]
+set N2a4ee380 [stack 0]
  Dot {
   name Dot8
   xpos 874
   ypos 1626
  }
-push $N8e245c00
+push $N5cbb8380
  Dot {
   name Dot3
   xpos -116
@@ -378,21 +376,21 @@ push $N8e245c00
   xpos -116
   ypos 1482
  }
-set N117a3500 [stack 0]
-push $N1131dc00
+set N64904e00 [stack 0]
+push $N2a4ef880
  Dot {
   name Dot14
   xpos 874
   ypos 498
  }
-set N118d7180 [stack 0]
+set N69ed9500 [stack 0]
  Dot {
   name Dot6
   xpos 874
   ypos 450
  }
-push $N8e245c00
-push $N11995880
+push $N5cbb8380
+push $N69ee0a80
  Blur {
   channels {{{parent.channels}}}
   size 40
@@ -400,7 +398,7 @@ push $N11995880
   xpos 510
   ypos 248
  }
-set N11330380 [stack 0]
+set N69ed8a80 [stack 0]
  Merge2 {
   inputs 2
   operation divide
@@ -408,7 +406,7 @@ set N11330380 [stack 0]
   xpos 70
   ypos 254
  }
-set N119aa380 [stack 0]
+set N69ed8700 [stack 0]
  Expression {
   inputs 1+1
   expr2 "g>max(r,b) ? max (r,b):g"
@@ -417,8 +415,8 @@ set N119aa380 [stack 0]
   xpos -40
   ypos 446
  }
-push $N118d7180
-push $N119aa380
+push $N69ed9500
+push $N69ed8700
  Expression {
   inputs 1+1
   expr2 "b>max(r,g) ? max (r,g):b"
@@ -435,19 +433,18 @@ push $N119aa380
   xpos 70
   ypos 1142
  }
- set Cdf004700 [stack 0]
-push $N11320e00
-push $N1190f880
-push $N8a9f6a80
-push $Ndea33c00
-push $N11330380
+ set C5cb25180 [stack 0]
+push $N2a4ef180
+push $N6495a380
+push $N6494e380
+push $N5cbb7c00
+push $N69ed8a80
  Dot {
   name Dot364
   xpos 654
   ypos 258
  }
  Multiply {
-  value 0.7
   name Multiply
   xpos 620
   ypos 320
@@ -475,8 +472,8 @@ push $N11330380
   xpos 654
   ypos 1098
  }
-set N118bf880 [stack 0]
-push $N11330380
+set N64be1880 [stack 0]
+push $N69ed8a80
  Copy {
   inputs 2+1
   from0 rgba.red
@@ -487,9 +484,9 @@ push $N11330380
   xpos 510
   ypos 1352
  }
-push $N11923880
-push $N118bf880
-push $N11330380
+push $N2a4ee000
+push $N64be1880
+push $N69ed8a80
  Copy {
   inputs 2+1
   from0 rgba.green
@@ -500,7 +497,7 @@ push $N11330380
   xpos 510
   ypos 1136
  }
-clone $Cdf004700 {
+clone $C5cb25180 {
   inputs 2
   xpos 180
   ypos 1142
@@ -513,7 +510,7 @@ clone $Cdf004700 {
   xpos 70
   ypos 1358
  }
-set N1196fc00 [stack 0]
+set N69eda380 [stack 0]
  Copy {
   inputs 2
   from1 rgba.red
@@ -525,9 +522,9 @@ set N1196fc00 [stack 0]
   xpos 180
   ypos 1460
  }
-push $N11911180
-push $N117a3500
-push $N1196fc00
+push $N2a4ee380
+push $N64904e00
+push $N69eda380
  Copy {
   inputs 2+1
   from1 rgba.red
@@ -539,7 +536,7 @@ push $N1196fc00
   xpos 70
   ypos 1460
  }
-clone $Cdf004700 {
+clone $C5cb25180 {
   inputs 2
   xpos 70
   ypos 1574
@@ -548,7 +545,6 @@ clone $Cdf004700 {
  EXPTool {
   inputs 1+1
   mode Stops
-  red -0.05
   green {{red x1930 3.9}}
   blue {{red x1930 4.2}}
   name Exposure1
